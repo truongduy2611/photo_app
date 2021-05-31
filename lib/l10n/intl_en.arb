@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "homeAppBarTitle": "Home",
+  "@homeAppBarTitle": {
+    "description": "Text shown in the AppBar of the Home Page"
+  },
+  "defaultErrorMessage": "An error has occured, please try again later!",
+  "@defaultErrorMessage": {
+    "description": "Text shown when an error has occurred"
+  },
+  "defaultNetworkErrorMessage": "No internet connection!",
+  "@defaultNetworkErrorMessage": {
+    "description": "Text shown when an error has occurred"
+  },
+  "fetchApiSuccessfully": "Successfully!",
+  "@fetchApiSuccessfully": {
+    "description": "Text shown when an error has occurred"
+  }
+}

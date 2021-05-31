@@ -1,0 +1,19 @@
+{
+  "@@locale": "vi",
+  "homeAppBarTitle": "Home",
+  "@homeAppBarTitle": {
+    "description": "Text shown in the AppBar of the Home Page"
+  },
+  "defaultErrorMessage": "Đã có lỗi xảy ra, vui lòng thử lại sau!",
+  "@defaultErrorMessage": {
+    "description": "Text shown when an error has occurred"
+  },
+  "defaultNetworkErrorMessage": "Có lỗi khi kết nối máy chủ, vui lòng thử lại sau!",
+  "@defaultNetworkErrorMessage": {
+    "description": "Text shown when an error has occurred"
+  },
+  "fetchApiSuccessfully": "Thành công!",
+  "@fetchApiSuccessfully": {
+    "description": "Text shown when an error has occurred"
+  }
+}
