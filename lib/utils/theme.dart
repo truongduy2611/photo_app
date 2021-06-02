@@ -58,34 +58,41 @@ ThemeData buildDarkTheme() {
       primary: Colors.black,
       secondary: Colors.pink[400]!,
       surface: Colors.grey[800]!,
-      error: Colors.red[400]!,
-      background: Colors.grey[700]!,
-      primaryVariant: Colors.black,
+      error: Colors.red[300]!,
+      background: Colors.grey[800]!,
+      primaryVariant: Colors.white70,
       secondaryVariant: Colors.pink,
       onSurface: Colors.grey[100]!,
       onBackground: Colors.grey[100]!,
       onError: Colors.white,
-      onPrimary: Colors.black,
+      onPrimary: Colors.white,
       onSecondary: Colors.white,
     ),
   ).copyWith(
+    textSelectionTheme: const TextSelectionThemeData(
+      selectionHandleColor: Colors.white,
+      cursorColor: Colors.white,
+      selectionColor: Colors.grey,
+    ),
     appBarTheme: AppBarTheme(
       iconTheme: const IconThemeData(color: Colors.white),
       actionsIconTheme: const IconThemeData(color: Colors.white),
       elevation: 0,
-      backgroundColor: Colors.grey[700]!,
+      backgroundColor: Colors.grey[800]!,
       foregroundColor: Colors.white,
     ),
-    textTheme: GoogleFonts.robotoTextTheme().copyWith(
-      headline4: GoogleFonts.comfortaaTextTheme()
-          .headline4!
-          .copyWith(color: Colors.white),
-      button: const TextStyle(
-        fontWeight: FontWeight.bold,
-        height: 1.2,
-        wordSpacing: 0.5,
-      ),
-    ),
+    textTheme: GoogleFonts.robotoTextTheme()
+        .copyWith(
+          headline4: GoogleFonts.comfortaaTextTheme()
+              .headline4!
+              .copyWith(color: Colors.white),
+          button: const TextStyle(
+            fontWeight: FontWeight.bold,
+            height: 1.2,
+            wordSpacing: 0.5,
+          ),
+        )
+        .apply(bodyColor: Colors.white),
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(6.0),

@@ -183,6 +183,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.1"
+  customizable_space_bar:
+    dependency: "direct main"
+    description:
+      name: customizable_space_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   dart_style:
     dependency: transitive
     description:
@@ -527,6 +534,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  reactive_forms:
+    dependency: "direct main"
+    description:
+      name: reactive_forms
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.4.1"
   shelf:
     dependency: transitive
     description:
@@ -730,4 +744,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=2.13.0 <3.0.0"
-  flutter: ">=2.0.0"
+  flutter: ">=2.2.0"

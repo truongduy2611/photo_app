@@ -15,9 +15,12 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       // TODO: initial app loading
-      Future.delayed(const Duration(seconds: 2), () {
-        Navigator.pushReplacementNamed(context, Routes.home);
-      });
+      Future.delayed(
+        const Duration(seconds: 2),
+        () {
+          Navigator.restorablePopAndPushNamed(context, Routes.loggedInRoot);
+        },
+      );
     });
   }
 

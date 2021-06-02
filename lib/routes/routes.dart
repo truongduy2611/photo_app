@@ -1,4 +1,7 @@
 class Routes {
   static const splash = 'splash';
-  static const home = '/';
+  static const loggedInRoot = '/';
+  static const logout = 'logout';
+  static const login = 'logout/login';
+  static const register = 'logout/register';
 }

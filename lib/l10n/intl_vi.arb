@@ -15,5 +15,21 @@
   "fetchApiSuccessfully": "Thành công!",
   "@fetchApiSuccessfully": {
     "description": "Text shown when an error has occurred"
-  }
+  },
+  "notFoundPageMessage": "Không tìm thấy trang yêu cầu!",
+  "loginButtonText": "ĐĂNG NHẬP",
+  "registerButtonText": "ĐĂNG KÝ",
+  "loginTitle": "Đăng nhập",
+  "emailLabel": "Email",
+  "passwordLabel": "Mật khẩu",
+  "confirmPasswordLabel": "Xác nhận mật khẩu",
+  "emailIsInvalidError": "Email không đúng định dạng!",
+  "emailIsRequiredError": "Email không thể để trống!",
+  "passwordIsRequiredError": "Mật khẩu không thể để trống!",
+  "confirmPasswordIsNotMatchError": "Nhập lại mật khẩu không đúng!",
+  "registerTitle": "Đăng ký",
+  "termOfServiceAndPrivacyPolicyText": "Bằng việc nhấn đăng ký, bạn đã đồng ý Photo về ",
+  "termOfServiceText": "Điều kiện sử dụng dịch vụ",
+  "privacyPolicyText": "Chính sách bảo mật",
+  "andText": "và"
 }

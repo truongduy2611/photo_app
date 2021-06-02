@@ -21,12 +21,37 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "andText": MessageLookupByLibrary.simpleMessage("and"),
+        "confirmPasswordIsNotMatchError": MessageLookupByLibrary.simpleMessage(
+            "Confirm password is not match!"),
+        "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage("Confirm"),
         "defaultErrorMessage": MessageLookupByLibrary.simpleMessage(
             "An error has occured, please try again later!"),
         "defaultNetworkErrorMessage":
             MessageLookupByLibrary.simpleMessage("No internet connection!"),
+        "emailIsInvalidError":
+            MessageLookupByLibrary.simpleMessage("Email is invalid!"),
+        "emailIsRequiredError":
+            MessageLookupByLibrary.simpleMessage("Email is required!"),
+        "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
         "fetchApiSuccessfully":
             MessageLookupByLibrary.simpleMessage("Successfully!"),
-        "homeAppBarTitle": MessageLookupByLibrary.simpleMessage("Home")
+        "homeAppBarTitle": MessageLookupByLibrary.simpleMessage("Home"),
+        "loginButtonText": MessageLookupByLibrary.simpleMessage("LOGIN"),
+        "loginTitle": MessageLookupByLibrary.simpleMessage("Log in"),
+        "notFoundPageMessage":
+            MessageLookupByLibrary.simpleMessage("Not found page!"),
+        "passwordIsRequiredError":
+            MessageLookupByLibrary.simpleMessage("Password is required!"),
+        "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+        "privacyPolicyText":
+            MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "registerButtonText": MessageLookupByLibrary.simpleMessage("REGISTER"),
+        "registerTitle": MessageLookupByLibrary.simpleMessage("Register"),
+        "termOfServiceAndPrivacyPolicyText":
+            MessageLookupByLibrary.simpleMessage(
+                "By signing up, you agree to Photo’s "),
+        "termOfServiceText":
+            MessageLookupByLibrary.simpleMessage("Terms of Service")
       };
 }

@@ -89,6 +89,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Không tìm thấy trang yêu cầu!`
+  String get notFoundPageMessage {
+    return Intl.message(
+      'Không tìm thấy trang yêu cầu!',
+      name: 'notFoundPageMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ĐĂNG NHẬP`
+  String get loginButtonText {
+    return Intl.message(
+      'ĐĂNG NHẬP',
+      name: 'loginButtonText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ĐĂNG KÝ`
+  String get registerButtonText {
+    return Intl.message(
+      'ĐĂNG KÝ',
+      name: 'registerButtonText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Đăng nhập`
+  String get loginTitle {
+    return Intl.message(
+      'Đăng nhập',
+      name: 'loginTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get emailLabel {
+    return Intl.message(
+      'Email',
+      name: 'emailLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mật khẩu`
+  String get passwordLabel {
+    return Intl.message(
+      'Mật khẩu',
+      name: 'passwordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Xác nhận mật khẩu`
+  String get confirmPasswordLabel {
+    return Intl.message(
+      'Xác nhận mật khẩu',
+      name: 'confirmPasswordLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email không đúng định dạng!`
+  String get emailIsInvalidError {
+    return Intl.message(
+      'Email không đúng định dạng!',
+      name: 'emailIsInvalidError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email không thể để trống!`
+  String get emailIsRequiredError {
+    return Intl.message(
+      'Email không thể để trống!',
+      name: 'emailIsRequiredError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mật khẩu không thể để trống!`
+  String get passwordIsRequiredError {
+    return Intl.message(
+      'Mật khẩu không thể để trống!',
+      name: 'passwordIsRequiredError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nhập lại mật khẩu không đúng!`
+  String get confirmPasswordIsNotMatchError {
+    return Intl.message(
+      'Nhập lại mật khẩu không đúng!',
+      name: 'confirmPasswordIsNotMatchError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Đăng ký`
+  String get registerTitle {
+    return Intl.message(
+      'Đăng ký',
+      name: 'registerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bằng việc nhấn đăng ký, bạn đã đồng ý Photo về `
+  String get termOfServiceAndPrivacyPolicyText {
+    return Intl.message(
+      'Bằng việc nhấn đăng ký, bạn đã đồng ý Photo về ',
+      name: 'termOfServiceAndPrivacyPolicyText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Điều kiện sử dụng dịch vụ`
+  String get termOfServiceText {
+    return Intl.message(
+      'Điều kiện sử dụng dịch vụ',
+      name: 'termOfServiceText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chính sách bảo mật`
+  String get privacyPolicyText {
+    return Intl.message(
+      'Chính sách bảo mật',
+      name: 'privacyPolicyText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `và`
+  String get andText {
+    return Intl.message(
+      'và',
+      name: 'andText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -21,12 +21,38 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "andText": MessageLookupByLibrary.simpleMessage("và"),
+        "confirmPasswordIsNotMatchError": MessageLookupByLibrary.simpleMessage(
+            "Nhập lại mật khẩu không đúng!"),
+        "confirmPasswordLabel":
+            MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
         "defaultErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Đã có lỗi xảy ra, vui lòng thử lại sau!"),
         "defaultNetworkErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Có lỗi khi kết nối máy chủ, vui lòng thử lại sau!"),
+        "emailIsInvalidError":
+            MessageLookupByLibrary.simpleMessage("Email không đúng định dạng!"),
+        "emailIsRequiredError":
+            MessageLookupByLibrary.simpleMessage("Email không thể để trống!"),
+        "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
         "fetchApiSuccessfully":
             MessageLookupByLibrary.simpleMessage("Thành công!"),
-        "homeAppBarTitle": MessageLookupByLibrary.simpleMessage("Home")
+        "homeAppBarTitle": MessageLookupByLibrary.simpleMessage("Home"),
+        "loginButtonText": MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP"),
+        "loginTitle": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
+        "notFoundPageMessage": MessageLookupByLibrary.simpleMessage(
+            "Không tìm thấy trang yêu cầu!"),
+        "passwordIsRequiredError": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu không thể để trống!"),
+        "passwordLabel": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "privacyPolicyText":
+            MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
+        "registerButtonText": MessageLookupByLibrary.simpleMessage("ĐĂNG KÝ"),
+        "registerTitle": MessageLookupByLibrary.simpleMessage("Đăng ký"),
+        "termOfServiceAndPrivacyPolicyText":
+            MessageLookupByLibrary.simpleMessage(
+                "Bằng việc nhấn đăng ký, bạn đã đồng ý Photo về "),
+        "termOfServiceText":
+            MessageLookupByLibrary.simpleMessage("Điều kiện sử dụng dịch vụ")
       };
 }

@@ -15,5 +15,21 @@
   "fetchApiSuccessfully": "Successfully!",
   "@fetchApiSuccessfully": {
     "description": "Text shown when an error has occurred"
-  }
+  },
+  "notFoundPageMessage": "Not found page!",
+  "loginButtonText": "LOGIN",
+  "registerButtonText": "REGISTER",
+  "loginTitle": "Log in",
+  "emailLabel": "Email",
+  "passwordLabel": "Password",
+  "confirmPasswordLabel": "Confirm",
+  "emailIsInvalidError": "Email is invalid!",
+  "emailIsRequiredError": "Email is required!",
+  "passwordIsRequiredError": "Password is required!",
+  "confirmPasswordIsNotMatchError": "Confirm password is not match!",
+  "registerTitle": "Register",
+  "termOfServiceAndPrivacyPolicyText": "By signing up, you agree to Photo’s ",
+  "termOfServiceText": "Terms of Service",
+  "privacyPolicyText": "Privacy Policy",
+  "andText": "and"
 }
