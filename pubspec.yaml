@@ -35,6 +35,12 @@ flutter:
   generate: true
   assets:
     - assets/images/
+    - assets/icons/
+    - assets/fonts/
+  fonts:
+    - family: AppIcons
+      fonts:
+        - asset: assets/fonts/ui_icons.ttf
 
 flutter_intl:
   enabled: true

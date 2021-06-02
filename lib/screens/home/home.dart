@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:photo_app/constants/assets.dart';
+import 'package:photo_app/constants/icons.dart';
 import 'package:photo_app/generated/l10n.dart';
 import 'package:photo_app/widgets/button.dart';
 
@@ -28,6 +30,15 @@ class HomePage extends StatelessWidget {
               onPressed: () {},
               child: Text('Outlined Button'),
             ),
+            Row(
+              children: [
+                Icon(AppIcons.back),
+                Icon(AppIcons.home),
+                Icon(AppIcons.comment),
+                Icon(AppIcons.search),
+                Icon(AppIcons.home),
+              ],
+            )
           ],
         ),
       ),
