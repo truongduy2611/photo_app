@@ -1,29 +1,31 @@
 import 'package:dio/dio.dart';
-import 'package:photo_app/models/photo.dart';
+import 'package:photo_app/models/unsplash_photo.dart';
 import 'package:photo_app/repositories/data_response.dart';
 
-const _baseUrl = 'https://httpbin.org';
-final _dio = Dio()
-  ..options = BaseOptions(
-    baseUrl: _baseUrl,
-  );
+class UnsplashPhotoApiClient {
+  static const baseUrl = 'https://api.unsplash.com';
+  static const unsplashApiKey =
+      'd354690c0d63529d862262fb0ef87a9571beacea090f6e83aacfcf27ec5f446a';
+  final _dio = Dio()..options = BaseOptions(baseUrl: baseUrl);
 
-class PhotoApiClient {
-  Future<DataResponse<List<PhotoModel>>> fetchPhotoList() {
-    final request = _dio.get('/get');
-    return makeRequest<List<PhotoModel>>(request, processCallback: (_) {
-      try {
-        return [<String, dynamic>{}]
-            .map((o) => PhotoModel.fromJson(o))
-            .toList();
-      } catch (e) {
-        print(e);
-      }
-      return [];
+  Future<DataResponse<List<UnsplashPhotoModel>>> fetchPhotoList({
+    required int page,
+  }) async {
+    final request = _dio.get('/photos?page=$page&client_id=$unsplashApiKey');
+    return makeRequest(request, processCallback: (data) {
+      final list = data as List;
+      return list.map((o) => UnsplashPhotoModel.fromJson(o)).toList();
+    });
+  }
+
+  Future<DataResponse<UnsplashPhotoModel>> fetchRandomPhoto() {
+    final request = _dio.get('/photos/random?client_id=$unsplashApiKey');
+    return makeRequest(request, processCallback: (data) {
+      return UnsplashPhotoModel.fromJson(data as Map<String, dynamic>);
     });
   }
 }
 
 class PhotoRepository {
-  final api = PhotoApiClient();
+  final api = UnsplashPhotoApiClient();
 }

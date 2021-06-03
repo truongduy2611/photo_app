@@ -31,5 +31,10 @@
   "termOfServiceAndPrivacyPolicyText": "Bằng việc nhấn đăng ký, bạn đã đồng ý Photo về ",
   "termOfServiceText": "Điều kiện sử dụng dịch vụ",
   "privacyPolicyText": "Chính sách bảo mật",
-  "andText": "và"
+  "andText": "và",
+  "defaultEmptyMessage": "Không có dữ liệu",
+  "seeMoreText": "Xem thêm",
+  "discoverTitle": "Khám phá",
+  "browseAllTitle": "Duyệt qua tất cả",
+  "whatsNewTodayTitle": "Hôm nay có gì mới"
 }

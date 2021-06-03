@@ -32,8 +32,8 @@ class MainTabBar extends StatefulWidget {
 
 class _MainTabBarState extends State<MainTabBar>
     with SingleTickerProviderStateMixin {
-  MainPageType _currentPage = MainPageType.home;
   late TabController _tabController;
+  MainPageType _currentPage = MainPageType.home;
 
   @override
   void initState() {
@@ -48,26 +48,28 @@ class _MainTabBarState extends State<MainTabBar>
     });
   }
 
+  final _pages = const [
+    HomePage(),
+    SizedBox(),
+    SizedBox(),
+    SizedBox(),
+    AccountPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(
         controller: _tabController,
         physics: const NeverScrollableScrollPhysics(),
-        children: [
-          const HomePage(),
-          Container(),
-          Container(),
-          Container(),
-          const AccountPage(),
-        ],
+        children: _pages,
       ),
       bottomNavigationBar: BottomAppBar(
         elevation: 8,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             for (int i = 0; i < 5; i++)
               if (i == 2)
@@ -134,7 +136,9 @@ class _BottomNavigationButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: IconTheme(
             data: IconThemeData(
-              color: isSelected ? Theme.of(context).accentColor : null,
+              color: isSelected
+                  ? Theme.of(context).accentColor
+                  : Theme.of(context).colorScheme.onSurface,
             ),
             child: icon,
           ),

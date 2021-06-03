@@ -22,13 +22,17 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "andText": MessageLookupByLibrary.simpleMessage("and"),
+        "browseAllTitle": MessageLookupByLibrary.simpleMessage("Browse all"),
         "confirmPasswordIsNotMatchError": MessageLookupByLibrary.simpleMessage(
             "Confirm password is not match!"),
         "confirmPasswordLabel": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "defaultEmptyMessage":
+            MessageLookupByLibrary.simpleMessage("Wow, such empty!"),
         "defaultErrorMessage": MessageLookupByLibrary.simpleMessage(
             "An error has occured, please try again later!"),
         "defaultNetworkErrorMessage":
             MessageLookupByLibrary.simpleMessage("No internet connection!"),
+        "discoverTitle": MessageLookupByLibrary.simpleMessage("Discover"),
         "emailIsInvalidError":
             MessageLookupByLibrary.simpleMessage("Email is invalid!"),
         "emailIsRequiredError":
@@ -48,10 +52,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "registerButtonText": MessageLookupByLibrary.simpleMessage("REGISTER"),
         "registerTitle": MessageLookupByLibrary.simpleMessage("Register"),
+        "seeMoreText": MessageLookupByLibrary.simpleMessage("See more"),
         "termOfServiceAndPrivacyPolicyText":
             MessageLookupByLibrary.simpleMessage(
                 "By signing up, you agree to Photo’s "),
         "termOfServiceText":
-            MessageLookupByLibrary.simpleMessage("Terms of Service")
+            MessageLookupByLibrary.simpleMessage("Terms of Service"),
+        "whatsNewTodayTitle":
+            MessageLookupByLibrary.simpleMessage("What\'s new today")
       };
 }

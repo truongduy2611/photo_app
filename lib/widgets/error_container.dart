@@ -11,7 +11,11 @@ class ErrorContainer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Icon(Icons.error_outline_rounded, size: 32),
+        Icon(
+          Icons.error_outline_rounded,
+          size: 32,
+          color: Theme.of(context).errorColor,
+        ),
         const SizedBox(height: 16),
         Text(message ?? S.current.defaultErrorMessage),
       ],

@@ -22,14 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "andText": MessageLookupByLibrary.simpleMessage("và"),
+        "browseAllTitle":
+            MessageLookupByLibrary.simpleMessage("Duyệt qua tất cả"),
         "confirmPasswordIsNotMatchError": MessageLookupByLibrary.simpleMessage(
             "Nhập lại mật khẩu không đúng!"),
         "confirmPasswordLabel":
             MessageLookupByLibrary.simpleMessage("Xác nhận mật khẩu"),
+        "defaultEmptyMessage":
+            MessageLookupByLibrary.simpleMessage("Không có dữ liệu"),
         "defaultErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Đã có lỗi xảy ra, vui lòng thử lại sau!"),
         "defaultNetworkErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Có lỗi khi kết nối máy chủ, vui lòng thử lại sau!"),
+        "discoverTitle": MessageLookupByLibrary.simpleMessage("Khám phá"),
         "emailIsInvalidError":
             MessageLookupByLibrary.simpleMessage("Email không đúng định dạng!"),
         "emailIsRequiredError":
@@ -49,10 +54,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
         "registerButtonText": MessageLookupByLibrary.simpleMessage("ĐĂNG KÝ"),
         "registerTitle": MessageLookupByLibrary.simpleMessage("Đăng ký"),
+        "seeMoreText": MessageLookupByLibrary.simpleMessage("Xem thêm"),
         "termOfServiceAndPrivacyPolicyText":
             MessageLookupByLibrary.simpleMessage(
                 "Bằng việc nhấn đăng ký, bạn đã đồng ý Photo về "),
         "termOfServiceText":
-            MessageLookupByLibrary.simpleMessage("Điều kiện sử dụng dịch vụ")
+            MessageLookupByLibrary.simpleMessage("Điều kiện sử dụng dịch vụ"),
+        "whatsNewTodayTitle":
+            MessageLookupByLibrary.simpleMessage("Hôm nay có gì mới")
       };
 }

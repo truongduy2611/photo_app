@@ -249,6 +249,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Không có dữ liệu`
+  String get defaultEmptyMessage {
+    return Intl.message(
+      'Không có dữ liệu',
+      name: 'defaultEmptyMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Xem thêm`
+  String get seeMoreText {
+    return Intl.message(
+      'Xem thêm',
+      name: 'seeMoreText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Khám phá`
+  String get discoverTitle {
+    return Intl.message(
+      'Khám phá',
+      name: 'discoverTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Duyệt qua tất cả`
+  String get browseAllTitle {
+    return Intl.message(
+      'Duyệt qua tất cả',
+      name: 'browseAllTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hôm nay có gì mới`
+  String get whatsNewTodayTitle {
+    return Intl.message(
+      'Hôm nay có gì mới',
+      name: 'whatsNewTodayTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

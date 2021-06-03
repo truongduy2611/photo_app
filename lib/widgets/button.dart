@@ -36,7 +36,7 @@ class OutlinedAppButton extends StatelessWidget {
     required this.onPressed,
     required this.child,
   }) : super(key: key);
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Widget child;
 
   @override

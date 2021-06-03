@@ -31,5 +31,10 @@
   "termOfServiceAndPrivacyPolicyText": "By signing up, you agree to Photo’s ",
   "termOfServiceText": "Terms of Service",
   "privacyPolicyText": "Privacy Policy",
-  "andText": "and"
+  "andText": "and",
+  "defaultEmptyMessage": "Wow, such empty!",
+  "seeMoreText": "See more",
+  "discoverTitle": "Discover",
+  "browseAllTitle": "Browse all",
+  "whatsNewTodayTitle": "What's new today"
 }

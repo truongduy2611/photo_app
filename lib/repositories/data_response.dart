@@ -4,7 +4,7 @@ import 'package:dio/dio.dart' as dio;
 import 'package:dio/dio.dart' show DioErrorType;
 import 'package:photo_app/generated/l10n.dart';
 
-typedef ProcessCallback<T> = T Function(Map<String, dynamic> responseData);
+typedef ProcessCallback<T> = T Function(dynamic responseData);
 
 enum Status { success, error, connectivityError }
 
@@ -36,9 +36,13 @@ class DataResponse<T> {
   bool get isSuccess => status == Status.success;
 }
 
-int _getTotal(Map<String, dynamic> response) {
+int _getTotal(response) {
   try {
-    final payload = response['payload'] as Map;
+    if (response is List) {
+      return response.length;
+    }
+
+    final payload = (response as Map)['payload'] as Map;
     return payload['total'] as int;
   } catch (_) {
     return 0;
@@ -73,7 +77,8 @@ Future<DataResponse<T>> makeRequest<T>(
         final response = e.response;
         try {
           return DataResponse.error(
-              message: (response!.data as Map)['message'].toString());
+              message:
+                  (response!.data as Map)['message'] ?? response.statusMessage);
         } catch (_) {}
       }
     }
