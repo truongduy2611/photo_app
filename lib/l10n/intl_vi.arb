@@ -36,5 +36,7 @@
   "seeMoreText": "Xem thêm",
   "discoverTitle": "Khám phá",
   "browseAllTitle": "Duyệt qua tất cả",
-  "whatsNewTodayTitle": "Hôm nay có gì mới"
+  "whatsNewTodayTitle": "Hôm nay có gì mới",
+  "okTitle": "Đồng ý",
+  "logoutButtonText": "Đăng xuất"
 }

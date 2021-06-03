@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "125577103957",
+    "project_id": "photo-app-b5ec9",
+    "storage_bucket": "photo-app-b5ec9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125577103957:android:920d4ba13bfd151a5962dc",
+        "android_client_info": {
+          "package_name": "com.example.photoApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125577103957-ptod7t1usu23p1c0957qjj2bmg3n594h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.photoApp",
+            "certificate_hash": "8cfc82d51527cc800c8d0da5280bfa0dbc0f03e3"
+          }
+        },
+        {
+          "client_id": "125577103957-2fi0t3d86bb8ncl93750dtfuncclbft3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjqMXfoMqDCjOrl5X-XCZ0e8KXtyOZtqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125577103957-2fi0t3d86bb8ncl93750dtfuncclbft3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "125577103957-v90shobdpdkjokg68og8bo1194d302hc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.photoApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

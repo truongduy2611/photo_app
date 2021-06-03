@@ -11,12 +11,12 @@ class AccountPage extends StatelessWidget {
         body: Center(
       child: ElevatedButton(
         onPressed: () {
-          Navigator.pushNamed(
+          Navigator.pushReplacementNamed(
             context,
             Routes.logout,
           );
         },
-        child: Text(S.current.loginButtonText),
+        child: Text(S.current.logoutButtonText.toUpperCase()),
       ),
     ));
   }

@@ -45,8 +45,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeAppBarTitle": MessageLookupByLibrary.simpleMessage("Home"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP"),
         "loginTitle": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
+        "logoutButtonText": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "notFoundPageMessage": MessageLookupByLibrary.simpleMessage(
             "Không tìm thấy trang yêu cầu!"),
+        "okTitle": MessageLookupByLibrary.simpleMessage("Đồng ý"),
         "passwordIsRequiredError": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu không thể để trống!"),
         "passwordLabel": MessageLookupByLibrary.simpleMessage("Mật khẩu"),

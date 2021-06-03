@@ -36,5 +36,7 @@
   "seeMoreText": "See more",
   "discoverTitle": "Discover",
   "browseAllTitle": "Browse all",
-  "whatsNewTodayTitle": "What's new today"
+  "whatsNewTodayTitle": "What's new today",
+  "okTitle": "OK",
+  "logoutButtonText": "Logout"
 }

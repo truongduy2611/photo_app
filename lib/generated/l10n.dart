@@ -299,6 +299,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Đồng ý`
+  String get okTitle {
+    return Intl.message(
+      'Đồng ý',
+      name: 'okTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Đăng xuất`
+  String get logoutButtonText {
+    return Intl.message(
+      'Đăng xuất',
+      name: 'logoutButtonText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

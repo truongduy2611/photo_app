@@ -43,8 +43,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeAppBarTitle": MessageLookupByLibrary.simpleMessage("Home"),
         "loginButtonText": MessageLookupByLibrary.simpleMessage("LOGIN"),
         "loginTitle": MessageLookupByLibrary.simpleMessage("Log in"),
+        "logoutButtonText": MessageLookupByLibrary.simpleMessage("Logout"),
         "notFoundPageMessage":
             MessageLookupByLibrary.simpleMessage("Not found page!"),
+        "okTitle": MessageLookupByLibrary.simpleMessage("OK"),
         "passwordIsRequiredError":
             MessageLookupByLibrary.simpleMessage("Password is required!"),
         "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
