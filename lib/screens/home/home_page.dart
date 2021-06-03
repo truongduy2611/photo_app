@@ -19,12 +19,7 @@ class _HomePageState extends State<HomePage>
         photoRepository: photoRepository,
         refreshController: RefreshController(),
       )..add(const FetchPhotoListEvent()),
-      child: BlocProvider(
-        create: (context) => TodayPhotoBloc(
-          photoRepository: photoRepository,
-        )..add(FetchNewPhotoEvent()),
-        child: const HomeContainer(),
-      ),
+      child: const HomeContainer(),
     );
   }
 

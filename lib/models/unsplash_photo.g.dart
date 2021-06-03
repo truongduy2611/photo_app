@@ -8,7 +8,7 @@ part of 'unsplash_photo.dart';
 
 UnsplashPhotoModel _$UnsplashPhotoModelFromJson(Map<String, dynamic> json) {
   return UnsplashPhotoModel(
-    color: json['color'] as String?,
+    color: colorFromHex(json['color'] as String),
     id: json['id'] as String?,
     urls: json['urls'] == null
         ? null
@@ -26,11 +26,11 @@ UnsplashPhotoModel _$UnsplashPhotoModelFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$UnsplashPhotoModelToJson(UnsplashPhotoModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'color': instance.color,
       'likes': instance.likes,
       'blur_hash': instance.blurHash,
       'width': instance.width,
       'height': instance.height,
       'urls': instance.urls,
       'user': instance.user,
+      'color': toColorHex(instance.color),
     };

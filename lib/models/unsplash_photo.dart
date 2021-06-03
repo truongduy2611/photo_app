@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:photo_app/utils/json_annotation_helpers.dart';
 
 import 'unsplash_urls.dart';
 import 'unsplash_user.dart';
@@ -24,7 +26,6 @@ class UnsplashPhotoModel extends Equatable {
   }
 
   final String? id;
-  final String? color;
   final int? likes;
 
   @JsonKey(name: 'blur_hash')
@@ -35,6 +36,9 @@ class UnsplashPhotoModel extends Equatable {
 
   final UnsplashUrlsModel? urls;
   final UnsplashUserModel? user;
+
+  @JsonKey(fromJson: colorFromHex, toJson: toColorHex)
+  final Color? color;
 
   Map<String, dynamic> toJson() => _$UnsplashPhotoModelToJson(this);
 

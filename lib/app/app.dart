@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:photo_app/generated/l10n.dart';
+import 'package:photo_app/global_blocs/today_photo/today_photo_bloc.dart';
 import 'package:photo_app/repositories/photo/repository.dart';
 import 'package:photo_app/routes/router.dart';
 import 'package:photo_app/utils/theme.dart';
@@ -17,17 +18,26 @@ class App extends StatelessWidget {
           create: (context) => PhotoRepository(),
         ),
       ],
-      child: MaterialApp(
-        theme: buildTheme(),
-        darkTheme: buildDarkTheme(),
-        localizationsDelegates: const [
-          ...GlobalMaterialLocalizations.delegates,
-          S.delegate,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => TodayPhotoBloc(
+              photoRepository: RepositoryProvider.of<PhotoRepository>(context),
+            )..add(FetchNewPhotoEvent()),
+          ),
         ],
-        supportedLocales: S.delegate.supportedLocales,
-        onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: AppRouter.initialRoute,
-        debugShowCheckedModeBanner: false,
+        child: MaterialApp(
+          theme: buildTheme(),
+          darkTheme: buildDarkTheme(),
+          localizationsDelegates: const [
+            ...GlobalMaterialLocalizations.delegates,
+            S.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          onGenerateRoute: AppRouter.onGenerateRoute,
+          initialRoute: AppRouter.initialRoute,
+          debugShowCheckedModeBanner: false,
+        ),
       ),
     );
   }
