@@ -38,5 +38,6 @@
   "browseAllTitle": "Browse all",
   "whatsNewTodayTitle": "What's new today",
   "okTitle": "OK",
-  "logoutButtonText": "Logout"
+  "logoutButtonText": "Logout",
+  "accountTitle": "Account"
 }

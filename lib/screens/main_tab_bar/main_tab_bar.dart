@@ -66,46 +66,52 @@ class _MainTabBarState extends State<MainTabBar>
       ),
       bottomNavigationBar: BottomAppBar(
         elevation: 8,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            for (int i = 0; i < 5; i++)
-              if (i == 2)
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 12.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(32.0),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color(0xffff4d00),
-                          Color(0xffff00d6),
-                        ],
+        child: SafeArea(
+          bottom: true,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                for (int i = 0; i < 5; i++)
+                  if (i == 2)
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 8.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(32.0),
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xffff4d00),
+                              Color(0xffff00d6),
+                            ],
+                          ),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: TextButton(
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    )
+                  else
+                    Expanded(
+                      child: _BottomNavigationButton(
+                        isSelected: _currentPage.index == i,
+                        onTap: () {
+                          _onChangePageType(MainPageType.values[i]);
+                        },
+                        icon: MainPageType.values[i].icon,
                       ),
                     ),
-                    clipBehavior: Clip.antiAlias,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Icon(
-                        Icons.add,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                )
-              else
-                Expanded(
-                  child: _BottomNavigationButton(
-                    isSelected: _currentPage.index == i,
-                    onTap: () {
-                      _onChangePageType(MainPageType.values[i]);
-                    },
-                    icon: MainPageType.values[i].icon,
-                  ),
-                ),
-          ],
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -129,19 +135,15 @@ class _BottomNavigationButton extends StatelessWidget {
     return InkResponse(
       onTap: onTap,
       radius: 8.0 * 6,
-      child: SafeArea(
-        top: false,
-        bottom: true,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: IconTheme(
-            data: IconThemeData(
-              color: isSelected
-                  ? Theme.of(context).accentColor
-                  : Theme.of(context).colorScheme.onSurface,
-            ),
-            child: icon,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: IconTheme(
+          data: IconThemeData(
+            color: isSelected
+                ? Theme.of(context).accentColor
+                : Theme.of(context).colorScheme.onSurface,
           ),
+          child: icon,
         ),
       ),
     );

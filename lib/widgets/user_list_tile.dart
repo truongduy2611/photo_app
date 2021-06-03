@@ -21,6 +21,7 @@ class UserListTile extends StatelessWidget {
                 )
               : const Icon(
                   Icons.account_circle_rounded,
+                  size: 32,
                 ),
         ),
         const SizedBox(width: 12.0),

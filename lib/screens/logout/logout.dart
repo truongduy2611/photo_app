@@ -44,14 +44,14 @@ class LogoutPage extends StatelessWidget {
                       ? ThemeData.estimateBrightnessForColor(state.photo.color!)
                       : brightness;
                 } else {
-                  image = const MiniCircularProgressIndicator();
+                  image = const Center(child: MiniCircularProgressIndicator());
                 }
 
                 final isDark = brightness == Brightness.dark;
                 return AnnotatedRegion<SystemUiOverlayStyle>(
                   value: isDark
-                      ? SystemUiOverlayStyle.light
-                      : SystemUiOverlayStyle.dark,
+                      ? SystemUiOverlayStyle.dark
+                      : SystemUiOverlayStyle.light,
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
@@ -59,6 +59,15 @@ class LogoutPage extends StatelessWidget {
                         width: mediaSize.width,
                         height: mediaSize.height,
                         child: image,
+                      ),
+
+                      /// a layer for easy to reading text
+                      SizedBox(
+                        width: mediaSize.width,
+                        height: mediaSize.height,
+                        child: Container(
+                          color: Colors.white30,
+                        ),
                       ),
                       Center(
                         child: Row(
@@ -74,7 +83,7 @@ class LogoutPage extends StatelessWidget {
                               'photo',
                               style: theme.textTheme.headline4!.copyWith(
                                 fontSize: 64,
-                                color: isDark ? Colors.white : Colors.black,
+                                color: Colors.black,
                               ),
                             )
                           ],
@@ -86,7 +95,7 @@ class LogoutPage extends StatelessWidget {
                         left: 16.0,
                         child: UserListTile(
                           user: user,
-                          textColor: isDark ? Colors.white : Colors.black,
+                          textColor: Colors.black,
                         ),
                       )
                     ],
