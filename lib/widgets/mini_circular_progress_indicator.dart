@@ -12,7 +12,7 @@ class MiniCircularProgressIndicator extends StatelessWidget {
       width: 16,
       child: CircularProgressIndicator(
         strokeWidth: 2.0,
-        color: color,
+        color: color ?? Theme.of(context).colorScheme.onSurface,
       ),
     );
   }

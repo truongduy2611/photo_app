@@ -10,6 +10,7 @@ import 'package:photo_app/widgets/app_space_bar.dart';
 import 'package:photo_app/widgets/button.dart';
 import 'package:photo_app/widgets/empty_container.dart';
 import 'package:photo_app/widgets/error_container.dart';
+import 'package:photo_app/widgets/mini_circular_progress_indicator.dart';
 import 'package:photo_app/widgets/network_image.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 

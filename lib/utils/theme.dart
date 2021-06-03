@@ -69,6 +69,7 @@ ThemeData buildDarkTheme() {
       onSecondary: Colors.white,
     ),
   ).copyWith(
+    indicatorColor: Colors.pink,
     textSelectionTheme: const TextSelectionThemeData(
       selectionHandleColor: Colors.white,
       cursorColor: Colors.white,

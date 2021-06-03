@@ -160,13 +160,7 @@ class _SeeMoreButtonState extends State<_SeeMoreButton> {
     return OutlinedAppButton(
       onPressed: _isLoading ? null : _onLoadMore,
       child: _isLoading
-          ? const SizedBox(
-              height: 16,
-              width: 16,
-              child: CircularProgressIndicator(
-                strokeWidth: 2.0,
-              ),
-            )
+          ? const MiniCircularProgressIndicator()
           : Text(S.current.seeMoreText.toUpperCase()),
     );
   }
