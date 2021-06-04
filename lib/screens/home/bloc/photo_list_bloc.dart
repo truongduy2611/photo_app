@@ -33,7 +33,8 @@ class PhotoListBloc extends Bloc<PhotoListEvent, PhotoListState> {
     }
 
     if (event is FetchPhotoListEvent) {
-      final response = await photoRepository.api.fetchPhotoList(page: page);
+      /// API page from 1 -> 0 + 1 for first page
+      final response = await photoRepository.api.fetchPhotoList(page: page + 1);
       if (response.isSuccess) {
         yield PhotoListLoaded(
           page: page + 1,
@@ -46,7 +47,7 @@ class PhotoListBloc extends Bloc<PhotoListEvent, PhotoListState> {
     }
 
     if (event is RefreshPhotoListEvent) {
-      final response = await photoRepository.api.fetchPhotoList(page: 0);
+      final response = await photoRepository.api.fetchPhotoList(page: 1);
       if (response.isSuccess) {
         refreshController.refreshCompleted();
         yield PhotoListLoaded(
