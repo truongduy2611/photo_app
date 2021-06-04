@@ -59,7 +59,7 @@ This project relies on [flutter_localizations][flutter_localizations_link] and f
 
 ### Adding Strings
 
-1. To add a new localizable string, open the `app_en.arb` file at `lib/l10n/arb/app_en.arb`.
+1. To add a new localizable string, open the `intl_en.arb` file at `lib/l10n/intl_en.arb`.
 
 ```arb
 {
@@ -94,9 +94,20 @@ import 'package:photo_app/l10n/l10n.dart';
 
 @override
 Widget build(BuildContext context) {
-  final l10n = context.l10n;
-  return Text(l10n.helloWorld);
+  return Text(S.current.helloWorld);
 }
+```
+
+S class stand for your generate class in pubspec.yaml
+
+```yaml
+flutter_intl:
+  enabled: true
+  class_name: S
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/generated
+  use_deferred_loading: false
 ```
 
 ### Adding Supported Locales
@@ -109,7 +120,7 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
     <key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
-		<string>es</string>
+		<string>vi</string>
 	</array>
 
     ...
@@ -117,18 +128,17 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 
 ### Adding Translations
 
-1. For each supported locale, add a new ARB file in `lib/l10n/arb`.
+1. For each supported locale, add a new ARB file in `lib/l10n`.
 
 ```
 ├── l10n
-│   ├── arb
-│   │   ├── app_en.arb
-│   │   └── app_es.arb
+│   ├── intl_en.arb
+│   └── intl_vi.arb
 ```
 
 2. Add the translated strings to each `.arb` file:
 
-`app_en.arb`
+`intl_en.arb`
 
 ```arb
 {
@@ -140,14 +150,14 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 }
 ```
 
-`app_es.arb`
+`intl_vi.arb`
 
 ```arb
 {
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
+    "@@locale": "vi",
+    "counterAppBarTitle": "Đếm",
     "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
+        "description": "Đoạn text hiển thị ở AppBar của Counter Page"
     }
 }
 ```
