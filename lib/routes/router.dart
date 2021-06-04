@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:photo_app/models/unsplash_photo.dart';
 import 'package:photo_app/routes/routes.dart';
 import 'package:photo_app/screens/login/login.dart';
 import 'package:photo_app/screens/logout/logout.dart';
 import 'package:photo_app/screens/main_tab_bar/main_tab_bar.dart';
 import 'package:photo_app/screens/not_found/not_found.dart';
+import 'package:photo_app/screens/photo_detail/photo_detail.dart';
 import 'package:photo_app/screens/register/register.dart';
 import 'package:photo_app/screens/splash/splash.dart';
 
@@ -39,6 +41,16 @@ class AppRouter {
         return createRoute(
           child: const RegisterPage(),
         );
+
+      case Routes.photoDetail:
+        if (settings.arguments is UnsplashPhotoModel)
+          return createRoute(
+            child: PhotoDetailPage(
+              photo: (settings.arguments as UnsplashPhotoModel),
+            ),
+            fullscreenDialog: true,
+          );
+        break;
 
       default:
         return createRoute(

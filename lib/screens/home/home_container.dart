@@ -93,10 +93,22 @@ class HomeContainer extends StatelessWidget {
                         },
                         itemBuilder: (context, i) {
                           final photo = photoList![i];
-                          return AppNetworkImage(
-                            imageUrl: photo.urls!.regular!,
-                            blurHash: photo.blurHash!,
-                            fit: BoxFit.cover,
+                          return InkWell(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                context,
+                                Routes.photoDetail,
+                                arguments: photo,
+                              );
+                            },
+                            child: Hero(
+                              tag: photo.id!,
+                              child: AppNetworkImage(
+                                imageUrl: photo.urls!.regular!,
+                                blurHash: photo.blurHash!,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           );
                         },
                       ),

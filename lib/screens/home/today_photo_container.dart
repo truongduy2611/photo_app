@@ -10,6 +10,7 @@ class TodayPhotoContainer extends StatelessWidget {
     return BlocBuilder<TodayPhotoBloc, TodayPhotoState>(
       builder: (context, state) {
         if (state is TodayPhotoLoaded) {
+          final photo = state.photo;
           return Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
@@ -18,20 +19,32 @@ class TodayPhotoContainer extends StatelessWidget {
               children: [
                 AspectRatio(
                   aspectRatio: 1,
-                  child: AppNetworkImage(
-                    imageUrl: state.photo.urls!.regular!,
-                    blurHash: state.photo.blurHash!,
-                    fit: BoxFit.cover,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        Routes.photoDetail,
+                        arguments: photo,
+                      );
+                    },
+                    child: Hero(
+                      tag: photo.id!,
+                      child: AppNetworkImage(
+                        imageUrl: photo.urls!.regular!,
+                        blurHash: photo.blurHash!,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12.0),
-                if (state.photo.user != null)
+                if (photo.user != null)
                   Row(
                     children: [
                       ClipOval(
-                        child: state.photo.user?.profileImage != null
+                        child: photo.user?.profileImage != null
                             ? Image.network(
-                                state.photo.user!.profileImage!.medium!,
+                                photo.user!.profileImage!.medium!,
                                 height: 32,
                                 width: 32,
                               )
@@ -44,13 +57,13 @@ class TodayPhotoContainer extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            state.photo.user?.name ?? 'User',
+                            photo.user?.name ?? 'User',
                             style: theme.textTheme.subtitle2?.copyWith(
                               fontWeight: FontWeight.w700,
                             ),
                           ),
                           Text(
-                            '@${state.photo.user?.username ?? 'username'}',
+                            '@${photo.user?.username ?? 'username'}',
                           )
                         ],
                       ),
