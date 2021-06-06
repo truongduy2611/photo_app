@@ -14,6 +14,7 @@ import 'package:photo_app/widgets/error_container.dart';
 import 'package:photo_app/widgets/mini_circular_progress_indicator.dart';
 import 'package:photo_app/widgets/network_image.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:layout/layout.dart';
 
 part 'home_page.dart';
 part 'home_container.dart';

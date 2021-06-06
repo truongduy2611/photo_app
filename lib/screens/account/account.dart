@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:photo_app/generated/l10n.dart';
 import 'package:photo_app/routes/routes.dart';
 import 'package:photo_app/widgets/app_space_bar.dart';
@@ -24,17 +25,23 @@ class AccountPage extends StatelessWidget {
             ),
             if (_auth.currentUser != null)
               SliverToBoxAdapter(
-                child: ListTile(
-                  leading: _auth.currentUser!.photoURL != null
-                      ? Image.network(
-                          _auth.currentUser!.photoURL!,
-                        )
-                      : const Icon(
-                          Icons.account_circle_rounded,
-                          size: 32,
-                        ),
-                  title: Text(_auth.currentUser?.displayName ?? 'N/A'),
-                  subtitle: Text(_auth.currentUser?.email ?? 'N/A'),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: context.layout.fluidMargin,
+                  ),
+                  child: ListTile(
+                    onTap: () {},
+                    leading: _auth.currentUser!.photoURL != null
+                        ? Image.network(
+                            _auth.currentUser!.photoURL!,
+                          )
+                        : const Icon(
+                            Icons.account_circle_rounded,
+                            size: 32,
+                          ),
+                    title: Text(_auth.currentUser?.displayName ?? 'N/A'),
+                    subtitle: Text(_auth.currentUser?.email ?? 'N/A'),
+                  ),
                 ),
               ),
             // SliverToBoxAdapter(

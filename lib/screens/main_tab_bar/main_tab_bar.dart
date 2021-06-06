@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 import 'package:photo_app/constants/assets.dart';
 import 'package:photo_app/constants/icons.dart';
 import 'package:photo_app/screens/account/account.dart';
 import 'package:photo_app/screens/home/home.dart';
+import 'package:photo_app/utils/layout.dart';
 
 enum MainPageType { home, search, add, chat, account }
 
@@ -69,7 +71,10 @@ class _MainTabBarState extends State<MainTabBar>
         child: SafeArea(
           bottom: true,
           child: Padding(
-            padding: const EdgeInsets.only(top: 8.0),
+            padding: EdgeInsets.symmetric(
+              vertical: 8.0,
+              horizontal: context.layout.fluidGutter,
+            ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -79,7 +84,7 @@ class _MainTabBarState extends State<MainTabBar>
                   if (i == 2)
                     Expanded(
                       child: Container(
-                        margin: const EdgeInsets.only(top: 8.0),
+                        height: 48,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(32.0),
                           gradient: const LinearGradient(

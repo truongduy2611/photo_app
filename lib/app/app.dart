@@ -6,6 +6,7 @@ import 'package:photo_app/global_blocs/today_photo/today_photo_bloc.dart';
 import 'package:photo_app/repositories/photo/repository.dart';
 import 'package:photo_app/routes/router.dart';
 import 'package:photo_app/utils/theme.dart';
+import 'package:layout/layout.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -26,17 +27,19 @@ class App extends StatelessWidget {
             )..add(FetchNewPhotoEvent()),
           ),
         ],
-        child: MaterialApp(
-          theme: buildTheme(),
-          darkTheme: buildDarkTheme(),
-          localizationsDelegates: const [
-            ...GlobalMaterialLocalizations.delegates,
-            S.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          onGenerateRoute: AppRouter.onGenerateRoute,
-          initialRoute: AppRouter.initialRoute,
-          debugShowCheckedModeBanner: false,
+        child: Layout(
+          child: MaterialApp(
+            theme: buildTheme(),
+            darkTheme: buildDarkTheme(),
+            localizationsDelegates: const [
+              ...GlobalMaterialLocalizations.delegates,
+              S.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            onGenerateRoute: AppRouter.onGenerateRoute,
+            initialRoute: AppRouter.initialRoute,
+            debugShowCheckedModeBanner: false,
+          ),
         ),
       ),
     );

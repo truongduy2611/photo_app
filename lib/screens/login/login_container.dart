@@ -44,6 +44,8 @@ class _LoginContainerState extends State<LoginContainer> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final layout = context.layout;
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -54,9 +56,9 @@ class _LoginContainerState extends State<LoginContainer> {
             flexibleSpace: AppSpaceBar(title: S.current.loginTitle),
           ),
           SliverPadding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 16.0,
-              horizontal: 16.0,
+            padding: EdgeInsets.symmetric(
+              vertical: layout.gutter,
+              horizontal: layout.fluidGutter,
             ),
             sliver: SliverSafeArea(
               top: false,

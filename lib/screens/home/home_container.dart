@@ -7,6 +7,9 @@ class HomeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final photoListBloc = BlocProvider.of<PhotoListBloc>(context);
     final todayPhotoBloc = BlocProvider.of<TodayPhotoBloc>(context);
+    final layout = context.layout;
+    final fluidGutter =
+        layout.fluidMargin > layout.gutter ? layout.fluidMargin : layout.gutter;
 
     return Scaffold(
       body: BlocBuilder<PhotoListBloc, PhotoListState>(
@@ -39,8 +42,8 @@ class HomeContainer extends StatelessWidget {
                     ),
                   ),
                   SliverPadding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: fluidGutter,
                       vertical: 24.0,
                     ),
                     sliver: SliverToBoxAdapter(
@@ -56,8 +59,8 @@ class HomeContainer extends StatelessWidget {
                     child: TodayPhotoContainer(),
                   ),
                   SliverPadding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: fluidGutter,
                       vertical: 24.0,
                     ),
                     sliver: SliverToBoxAdapter(
@@ -79,20 +82,30 @@ class HomeContainer extends StatelessWidget {
                     )
                   else if (photoList?.isNotEmpty == true)
                     SliverPadding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: fluidGutter),
                       sliver: SliverStaggeredGrid.countBuilder(
                         itemCount: photoList!.length,
-                        crossAxisCount: 10,
-                        mainAxisSpacing: 8,
-                        crossAxisSpacing: 8,
+                        crossAxisCount: layout.columns == 8 ? 6 : 4,
+                        mainAxisSpacing: layout.gutter / 2,
+                        crossAxisSpacing: layout.gutter / 2,
                         staggeredTileBuilder: (index) {
-                          return StaggeredTile.count(
-                            5,
-                            index.isEven ? 10 : 5,
+                          return StaggeredTile.fit(
+                            layout.columns > 8 ? 1 : 2,
                           );
                         },
                         itemBuilder: (context, i) {
                           final photo = photoList![i];
+                          final totalCols = layout.columns == 8
+                              ? 3
+                              : layout.columns > 8
+                                  ? 4
+                                  : 2;
+                          final totalGutterWidth =
+                              (totalCols + 2) * layout.gutter / 2;
+                          final containerHeight =
+                              (layout.width / totalCols - totalGutterWidth) *
+                                  photo.height! /
+                                  photo.width!;
                           return InkWell(
                             onTap: () {
                               Navigator.pushNamed(
@@ -101,12 +114,16 @@ class HomeContainer extends StatelessWidget {
                                 arguments: photo,
                               );
                             },
-                            child: Hero(
-                              tag: photo.id!,
-                              child: AppNetworkImage(
-                                imageUrl: photo.urls!.regular!,
-                                blurHash: photo.blurHash!,
-                                fit: BoxFit.cover,
+                            child: Container(
+                              color: photo.color,
+                              height: containerHeight,
+                              child: Hero(
+                                tag: photo.id!,
+                                child: AppNetworkImage(
+                                  imageUrl: photo.urls!.regular!,
+                                  blurHash: photo.blurHash!,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           );
@@ -128,12 +145,12 @@ class HomeContainer extends StatelessWidget {
                       ),
                     ),
                   if (state is PhotoListLoaded)
-                    const SliverPadding(
+                    SliverPadding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 16.0,
+                        horizontal: fluidGutter,
                         vertical: 32.0,
                       ),
-                      sliver: SliverToBoxAdapter(
+                      sliver: const SliverToBoxAdapter(
                         child: _SeeMoreButton(),
                       ),
                     ),
@@ -160,6 +177,7 @@ class _SeeMoreButtonState extends State<_SeeMoreButton> {
     setState(() {
       _isLoading = true;
     });
+
     BlocProvider.of<PhotoListBloc>(context).add(FetchPhotoListEvent(onDone: () {
       setState(() {
         _isLoading = false;

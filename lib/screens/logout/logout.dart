@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:layout/layout.dart';
 import 'package:photo_app/constants/assets.dart';
 import 'package:photo_app/generated/l10n.dart';
 import 'package:photo_app/global_blocs/today_photo/today_photo_bloc.dart';
@@ -10,6 +11,7 @@ import 'package:photo_app/widgets/button.dart';
 import 'package:photo_app/widgets/mini_circular_progress_indicator.dart';
 import 'package:photo_app/widgets/network_image.dart';
 import 'package:photo_app/widgets/user_list_tile.dart';
+import 'package:photo_app/utils/layout.dart';
 
 class LogoutPage extends StatelessWidget {
   const LogoutPage({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class LogoutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaSize = MediaQuery.of(context).size;
     final theme = Theme.of(context);
+    final layout = context.layout;
     return Material(
       child: Column(
         children: [
@@ -90,12 +93,16 @@ class LogoutPage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        bottom: 16.0,
-                        right: 16.0,
-                        left: 16.0,
-                        child: UserListTile(
-                          user: user,
-                          textColor: Colors.black,
+                        bottom: layout.gutter,
+                        right: layout.gutter,
+                        left: layout.gutter,
+                        child: SafeArea(
+                          top: false,
+                          bottom: false,
+                          child: UserListTile(
+                            user: user,
+                            textColor: Colors.black,
+                          ),
                         ),
                       )
                     ],
@@ -107,8 +114,9 @@ class LogoutPage extends StatelessWidget {
           SafeArea(
             top: false,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0)
-                  .copyWith(top: 20.0),
+              padding: EdgeInsets.symmetric(
+                horizontal: layout.fluidGutter,
+              ).copyWith(top: 20.0),
               child: Row(
                 children: [
                   Expanded(

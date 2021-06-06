@@ -47,6 +47,7 @@ class _RegisterContainerState extends State<RegisterContainer> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final layout = context.layout;
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -57,9 +58,9 @@ class _RegisterContainerState extends State<RegisterContainer> {
             flexibleSpace: AppSpaceBar(title: S.current.registerTitle),
           ),
           SliverPadding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 16.0,
-              horizontal: 16.0,
+            padding: EdgeInsets.symmetric(
+              horizontal: layout.fluidGutter,
+              vertical: layout.gutter,
             ),
             sliver: SliverSafeArea(
               top: false,

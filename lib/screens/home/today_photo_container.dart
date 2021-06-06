@@ -7,14 +7,15 @@ class TodayPhotoContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final media = MediaQuery.of(context);
+    final layout = context.layout;
+    final fluidGutter =
+        layout.fluidMargin > layout.gutter ? layout.fluidMargin : layout.gutter;
     return BlocBuilder<TodayPhotoBloc, TodayPhotoState>(
       builder: (context, state) {
         if (state is TodayPhotoLoaded) {
           final photo = state.photo;
           return Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16.0,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: fluidGutter),
             child: Column(
               children: [
                 AspectRatio(
